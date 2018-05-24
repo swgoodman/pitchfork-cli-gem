@@ -1,8 +1,6 @@
 # PitchforkLatest
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pitchfork_latest`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to PitchforkLatest. This gem provides the latest reviews from Pitchfork.com and allows you to get a quick summary of the review including score, a paragraph of the review, and its author.  
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The gem will provide the most recent reviews upon initiation. Simply follow the CLI prompts and select the review you would like to investigate or 'exit' to carry on with your day.
 
 ## Development
 
