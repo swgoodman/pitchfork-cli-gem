@@ -20,7 +20,7 @@ class PitchforkLatest::CLI
   end
 
   def latest_scrape
-    @latest = PitchforkLatest::Scraper.scrape_latest
+    @latest = PitchforkLatest::Scraper.new.scrape_latest
   end
 
   def show_latest
@@ -36,7 +36,7 @@ class PitchforkLatest::CLI
       input = gets.strip.downcase
       if input.to_i.between?(1,@latest.length)
         the_album = @latest[input.to_i-1]
-        the_album.scrape_info
+        the_album.scrape_review_info
         puts "'#{the_album.album}' by #{the_album.artist} -- #{the_album.genre}"
         puts "--------------------------------------------"
         puts "Score: #{the_album.score} -- Review by #{the_album.author}"

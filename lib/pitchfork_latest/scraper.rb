@@ -1,9 +1,10 @@
 
 class PitchforkLatest::Scraper
+  attr_accessor :doc
 
-  def self.scrape_latest
+  def scrape_latest
 
-    doc = Nokogiri::HTML(open("https://pitchfork.com/"))
+    @doc = Nokogiri::HTML(open("https://pitchfork.com/"))
 
     review_blocks = []
     doc.search("div.album-review-hero")[1..4].each do |review|

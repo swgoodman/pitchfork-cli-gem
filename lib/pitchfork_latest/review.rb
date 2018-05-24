@@ -11,7 +11,7 @@ class PitchforkLatest::Review
     @@all
   end
 
-  def scrape_info
+  def scrape_review_info
 
     doc = Nokogiri::HTML(open(self.url))
     self.score = doc.search('span.score').text
