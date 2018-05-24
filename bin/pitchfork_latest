@@ -1,1 +1,6 @@
 #!/usr/bin/env ruby
+
+require "bundler/setup"
+require './lib/pitchfork_latest'
+
+PitchforkLatest::CLI.new.call

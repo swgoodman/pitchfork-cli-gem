@@ -1,5 +1,3 @@
-require "pitchfork_latest/version"
-
-module PitchforkLatest
-  # Your code goes here...
-end
+require_relative "./pitchfork_latest/version"
+require_relative "./pitchfork_latest/review"
+require_relative "./pitchfork_latest/cli"

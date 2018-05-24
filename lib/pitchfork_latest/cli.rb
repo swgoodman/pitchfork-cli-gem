@@ -1,6 +1,6 @@
-class Pitchfork_Latest::CLI
-  attr_accessor :top_five
 
+class PitchforkLatest::CLI
+  attr_accessor :top_five
 
   def call
     greeting
@@ -19,7 +19,7 @@ class Pitchfork_Latest::CLI
   end
 
   def show_latest
-    @latest = Pitchfork_Latest::Review.scrape_latest
+    @latest = PitchforkLatest::Review.scrape_latest
     @latest.each.with_index(1) do |review, i|
       puts "#{i}. '#{review.album}' by #{review.artist}"
     end
