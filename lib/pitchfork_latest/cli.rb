@@ -30,10 +30,13 @@ class PitchforkLatest::CLI
   end
 
   def menu
-    input = nil
+
     puts "Enter the number of an album to see more info or 'exit':"
+    input = nil
+
     while input != "exit"
       input = gets.strip.downcase
+
       if input.to_i.between?(1,@latest.length)
         the_album = @latest[input.to_i-1]
         the_album.scrape_review_info
