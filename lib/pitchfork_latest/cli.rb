@@ -11,12 +11,12 @@ class PitchforkLatest::CLI
 
   def greeting
     puts "                       "
-    puts "----------------------------------"
-    puts "The latest music reviews from Pitchfork.com"
-    puts "'The most trusted voice in music.'"
-    puts "----------------------------------"
+    puts "--------------------------------------------------"
+    puts "Pitchfork.com | 'The most trusted voice in music.'"
+    puts "--------------------------------------------------"
     puts "                       "
     puts "Find the latest reviews from Pitchfork.com below:"
+    puts "                       "
   end
 
   def latest_scrape
@@ -24,13 +24,17 @@ class PitchforkLatest::CLI
   end
 
   def show_latest
+    rows = []
     @latest.each.with_index(1) do |review, i|
-      puts "#{i}. '#{review.album}' by #{review.artist}"
+      rows << ["#{i}.","'#{review.album}' by #{review.artist}" ]
     end
+    table = Terminal::Table.new :rows => rows
+    puts table
   end
 
   def menu
 
+    puts "                       "
     puts "Enter the number of an album to see more info or 'exit':"
     input = nil
 
@@ -40,9 +44,16 @@ class PitchforkLatest::CLI
       if input.to_i.between?(1,@latest.length)
         the_album = @latest[input.to_i-1]
         the_album.scrape_review_info
-        puts "'#{the_album.album}' by #{the_album.artist} -- #{the_album.genre}"
+        puts "                       "
         puts "--------------------------------------------"
-        puts "Score: #{the_album.score} -- Review by #{the_album.author}"
+        puts "'#{the_album.album}' by #{the_album.artist}"
+        puts "Genre: #{the_album.genre}"
+        puts "--------------------------------------------"
+        puts "                       "
+        puts "Score: #{the_album.score}"
+        puts "                       "
+        puts "Review by #{the_album.author}"
+        puts "                       "
         puts "#{the_album.first_paragraph}"
         puts "                       "
         puts "Type 'list' to choose another or 'exit'."
@@ -58,6 +69,10 @@ class PitchforkLatest::CLI
   end
 
   def goodbye
+    puts "                       "
+    puts "-----------------------"
     puts "Thanks for stopping by."
+    puts "-----------------------"
+    puts "                       "
   end
 end
