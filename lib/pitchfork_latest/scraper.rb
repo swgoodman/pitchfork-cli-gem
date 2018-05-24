@@ -16,17 +16,8 @@ class PitchforkLatest::Scraper
       review.artist = doc.search("ul.artist-list")[i].text.gsub(/[^a-zA-Z 0-9]/, "").gsub(/\s+/, ' ')
       review.album = doc.search("h2.title")[i+2].text.gsub(/[^a-zA-Z 0-9]/, "").gsub(/\s+/, ' ')
       review.genre = doc.search("ul.genre-list")[i].text
-      
+
     end
     PitchforkLatest::Review.all
-  end
-
-  def scrape_info
-
-    doc = Nokogiri::HTML(open(self.url))
-    self.score = doc.search('span.score').text
-    self.first_paragraph = doc.xpath('//p').text.gsub!(/[^A-Za-z ."  ']/,'')
-    self.author = doc.search('a.authors-detail__display-name').text
-
   end
 end
