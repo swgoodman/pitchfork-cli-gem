@@ -18,7 +18,7 @@ class PitchforkLatest::Review
 
     review_blocks.each.with_index do |review, i|
       review = self.new
-      review.url = doc.search('a.album-link')[i].attribute('href').value
+      review.url = "https://pitchfork.com#{doc.search('a.album-link')[i].attribute('href').value}"
       review.artist = doc.search("ul.artist-list")[i].text.gsub(/[^a-zA-Z 0-9]/, "").gsub(/\s+/, ' ')
 
       review.album = doc.search("h2.title")[i+2].text.gsub(/[^a-zA-Z 0-9]/, "").gsub(/\s+/, ' ')
@@ -27,10 +27,12 @@ class PitchforkLatest::Review
     @@all
   end
 
-  def scrape_info(url)
-    doc = Nokogiri::HTML(open(self.url))
+  def scrape_info
 
-    self.score =
+    doc = Nokogiri::HTML(open(self.url))
+    # binding.pry
+    self.score = doc.search('span.score').text
+    self.first_paragraph = doc.xpath('//p').text.gsub!(/[^A-Za-z ."  ']/,'')
 
 
   end

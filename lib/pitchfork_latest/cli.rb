@@ -35,7 +35,13 @@ class PitchforkLatest::CLI
     while input != "exit"
       input = gets.strip.downcase
       if input.to_i.between?(1,@latest.length)
-        puts "more info on 1."
+        the_album = @latest[input.to_i-1]
+        the_album.scrape_info
+        puts "'#{the_album.album}' by #{the_album.artist} -- #{the_album.genre}"
+        puts "--------------------------------------------"
+        puts "Score: #{the_album.score}"
+        puts "#{the_album.first_paragraph}"
+        puts "                       "
         puts "Type 'list' to choose another or 'exit'."
       elsif input == "list"
         show_latest
