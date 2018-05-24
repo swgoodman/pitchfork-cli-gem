@@ -39,7 +39,7 @@ class PitchforkLatest::CLI
         the_album.scrape_info
         puts "'#{the_album.album}' by #{the_album.artist} -- #{the_album.genre}"
         puts "--------------------------------------------"
-        puts "Score: #{the_album.score}"
+        puts "Score: #{the_album.score} -- Review by #{the_album.author}"
         puts "#{the_album.first_paragraph}"
         puts "                       "
         puts "Type 'list' to choose another or 'exit'."

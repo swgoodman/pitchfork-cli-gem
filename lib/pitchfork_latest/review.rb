@@ -30,7 +30,6 @@ class PitchforkLatest::Review
   def scrape_info
 
     doc = Nokogiri::HTML(open(self.url))
-    binding.pry
     self.score = doc.search('span.score').text
     self.first_paragraph = doc.xpath('//p').text.gsub!(/[^A-Za-z ."  ']/,'')
     self.author = doc.search('a.authors-detail__display-name').text
