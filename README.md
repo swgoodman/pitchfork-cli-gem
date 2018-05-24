@@ -1,6 +1,6 @@
 # PitchforkLatest
 
-Welcome to PitchforkLatest. This gem provides the latest reviews from Pitchfork.com and allows you to get a quick summary of the review including score, a paragraph of the review, and its author.  
+Welcome to PitchforkLatest. This gem provides the latest reviews from Pitchfork.com and allows you to get a quick summary of the review including its author, the album's score, and a sample of the review.  
 
 ## Installation
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pitchfork_latest. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/swgoodman/pitchfork-cli-gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
