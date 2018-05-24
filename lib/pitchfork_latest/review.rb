@@ -1,12 +1,12 @@
 
 class PitchforkLatest::Review
+  attr_accessor :url, :album, :artist, :genre, :rating, :first_paragraph
 
   def initialize
 
   end
 
-  def scrape_latest
-    [hello, hello]
+  def self.scrape_latest
 
   end
 end
