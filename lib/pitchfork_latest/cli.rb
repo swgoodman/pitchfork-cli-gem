@@ -4,6 +4,7 @@ class PitchforkLatest::CLI
 
   def call
     greeting
+    latest_scrape
     show_latest
     menu
   end
@@ -18,8 +19,11 @@ class PitchforkLatest::CLI
     puts "Find the latest reviews from Pitchfork.com below:"
   end
 
-  def show_latest
+  def latest_scrape
     @latest = PitchforkLatest::Review.scrape_latest
+  end
+
+  def show_latest
     @latest.each.with_index(1) do |review, i|
       puts "#{i}. '#{review.album}' by #{review.artist}"
     end
