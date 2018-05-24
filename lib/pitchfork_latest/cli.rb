@@ -12,7 +12,7 @@ class PitchforkLatest::CLI
   def greeting
     puts "                       "
     puts "----------------------------------"
-    puts "Pitchfork | Music Lists"
+    puts "The latest music reviews from Pitchfork.com"
     puts "'The most trusted voice in music.'"
     puts "----------------------------------"
     puts "                       "
@@ -20,7 +20,7 @@ class PitchforkLatest::CLI
   end
 
   def latest_scrape
-    @latest = PitchforkLatest::Review.scrape_latest
+    @latest = PitchforkLatest::Scraper.scrape_latest
   end
 
   def show_latest
